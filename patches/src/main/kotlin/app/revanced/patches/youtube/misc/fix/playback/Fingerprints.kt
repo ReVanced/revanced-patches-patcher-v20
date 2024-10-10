@@ -215,7 +215,7 @@ internal val playerResponseModelBackgroundAudioPlaybackFingerprint = fingerprint
 internal val protobufClassParseByteBufferFingerprint = fingerprint {
     accessFlags(AccessFlags.PROTECTED, AccessFlags.STATIC)
     returns("L")
-    parameters("Ljava/nio/ByteBuffer;")
+    parameters("L", "Ljava/nio/ByteBuffer;")
     opcodes(
         Opcode.SGET_OBJECT,
         Opcode.INVOKE_STATIC,
