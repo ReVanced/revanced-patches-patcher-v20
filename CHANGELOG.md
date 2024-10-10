@@ -1,3 +1,19 @@
+# [4.17.0](https://github.com/ReVanced/revanced-patches-patcher-v20/compare/v4.16.0...v4.17.0) (2024-10-10)
+
+
+### Bug Fixes
+
+* remove duplicate bytecode target ([82956dd](https://github.com/ReVanced/revanced-patches-patcher-v20/commit/82956ddab084d8321e9c45cf7e1d4560420ca662))
+* **YouTube - Hide layout components:** Adjust settings text ([#3745](https://github.com/ReVanced/revanced-patches-patcher-v20/issues/3745)) ([13998bb](https://github.com/ReVanced/revanced-patches-patcher-v20/commit/13998bbf95ac3cde8bf24754d60258d0ff9bc4f4))
+
+
+### Features
+
+* **Backdrops - Pro unlock:** Support latest versions by removing version constraint ([a62b506](https://github.com/ReVanced/revanced-patches-patcher-v20/commit/a62b50691c49d1ce529a7c9c4e49da0d0dd46df2))
+* **Willhaben:** Add `Hide ads` patch ([#3740](https://github.com/ReVanced/revanced-patches-patcher-v20/issues/3740)) ([1fe3a52](https://github.com/ReVanced/revanced-patches-patcher-v20/commit/1fe3a523e99ccfe556d88800686e34ac6ed77b2c))
+* **YouTube - Hide layout components:** Add option to hide Yoodles (YouTube Doodles) ([#3743](https://github.com/ReVanced/revanced-patches-patcher-v20/issues/3743)) ([b8c8916](https://github.com/ReVanced/revanced-patches-patcher-v20/commit/b8c89164cf3911ac3842df9b0d2ec42b52213505))
+* **YouTube - Hide Shorts components:** Add option to hide like fountain ([#3731](https://github.com/ReVanced/revanced-patches-patcher-v20/issues/3731)) ([00a99dd](https://github.com/ReVanced/revanced-patches-patcher-v20/commit/00a99dd13be6e5c44fa691d74c92b23ce6ba659d))
+
 # [4.17.0-dev.5](https://github.com/ReVanced/revanced-patches/compare/v4.17.0-dev.4...v4.17.0-dev.5) (2024-10-07)
 
 
