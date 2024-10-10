@@ -80,24 +80,25 @@ private val hideShortsComponentsResourcePatch = resourcePatch {
             SwitchPreference("revanced_hide_shorts_navigation_bar"),
         )
 
-        if (hideShortsAppShortcut == true) {
-            context.document["res/xml/main_shortcuts.xml"].use { document ->
-                val shortsItem = document.childNodes.findElementByAttributeValueOrThrow(
-                    "android:shortcutId",
-                    "shorts-shortcut",
-                )
+        // Verify the file has the expected node, even if the patch option is off.
+        context.document["res/xml/main_shortcuts.xml"].use { document ->
+            val shortsItem = document.childNodes.findElementByAttributeValueOrThrow(
+                "android:shortcutId",
+                "shorts-shortcut",
+            )
 
+            if (hideShortsAppShortcut == true) {
                 shortsItem.parentNode.removeChild(shortsItem)
             }
         }
 
-        if (hideShortsWidget == true) {
-            context.document["res/layout/appwidget_two_rows.xml"].use { document ->
-                val shortsItem = document.childNodes.findElementByAttributeValueOrThrow(
-                    "android:id",
-                    "@id/button_shorts_container",
-                )
+        context.document["res/layout/appwidget_two_rows.xml"].use { document ->
+            val shortsItem = document.childNodes.findElementByAttributeValueOrThrow(
+                "android:id",
+                "@id/button_shorts_container",
+            )
 
+            if (hideShortsWidget == true) {
                 shortsItem.parentNode.removeChild(shortsItem)
             }
         }
