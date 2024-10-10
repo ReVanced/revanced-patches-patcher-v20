@@ -30,6 +30,20 @@ internal var reelMultipleItemShelfId = -1L
 internal var reelPlayerRightCellButtonHeight = -1L
     private set
 
+internal val hideShortsAppShortcutOption = booleanOption(
+    key = "hideShortsAppShortcut",
+    default = false,
+    title = "Hide Shorts app shortcut",
+    description = "Permanently hides the shortcut to open Shorts when long pressing the app icon in your launcher.",
+)
+
+internal val hideShortsWidgetOption = booleanOption(
+    key = "hideShortsWidget",
+    default = false,
+    title = "Hide Shorts widget",
+    description = "Permanently hides the launcher widget Shorts button.",
+)
+
 private val hideShortsComponentsResourcePatch = resourcePatch {
     dependsOn(
         settingsPatch,
@@ -37,10 +51,10 @@ private val hideShortsComponentsResourcePatch = resourcePatch {
         addResourcesPatch,
     )
 
-    val hideShortsAppShortcut by hideShortsAppShortcutOption
-    val hideShortsWidget by hideShortsWidgetOption
-
     execute { context ->
+        val hideShortsAppShortcut by hideShortsAppShortcutOption
+        val hideShortsWidget by hideShortsWidgetOption
+
         addResources("youtube", "layout.hide.shorts.hideShortsComponentsResourcePatch")
 
         PreferenceScreen.SHORTS.addPreferences(
@@ -119,20 +133,6 @@ private val hideShortsComponentsResourcePatch = resourcePatch {
         }.also { reelPlayerRightCellButtonHeight = it }
     }
 }
-
-internal val hideShortsAppShortcutOption = booleanOption(
-    key = "hideShortsAppShortcut",
-    default = false,
-    title = "Hide Shorts app shortcut",
-    description = "Permanently hides the shortcut to open Shorts when long pressing the app icon in your launcher."
-)
-
-internal val hideShortsWidgetOption = booleanOption(
-    key = "hideShortsWidget",
-    default = false,
-    title = "Hide Shorts widget",
-    description = "Permanently hides the launcher widget Shorts button."
-)
 
 private const val FILTER_CLASS_DESCRIPTOR = "Lapp/revanced/extension/youtube/patches/components/ShortsFilter;"
 
@@ -235,7 +235,7 @@ val hideShortsComponentsPatch = bytecodePatch(
                 addInstruction(
                     insertIndex,
                     "sput-object v$viewRegister, $FILTER_CLASS_DESCRIPTOR->pivotBar:" +
-                            "Lcom/google/android/libraries/youtube/rendering/ui/pivotbar/PivotBar;",
+                        "Lcom/google/android/libraries/youtube/rendering/ui/pivotbar/PivotBar;",
                 )
             }
         }
@@ -258,7 +258,7 @@ val hideShortsComponentsPatch = bytecodePatch(
             addInstruction(
                 insertIndex,
                 "invoke-static { v$viewRegister }, $FILTER_CLASS_DESCRIPTOR->" +
-                        "hideNavigationBar(Landroid/view/View;)Landroid/view/View;",
+                    "hideNavigationBar(Landroid/view/View;)Landroid/view/View;",
             )
         }
 
