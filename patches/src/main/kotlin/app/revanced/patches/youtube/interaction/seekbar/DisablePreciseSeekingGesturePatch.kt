@@ -61,8 +61,7 @@ val disablePreciseSeekingGesturePatch = bytecodePatch(
             SwitchPreference("revanced_disable_precise_seeking_gesture"),
         )
         val extensionMethodDescriptor =
-            "Lapp/revanced/extension/youtube/patches/DisablePreciseSeekingGesturePatch;->" +
-                    "disableGesture(Landroid/view/VelocityTracker;Landroid/view/MotionEvent;)V"
+            "Lapp/revanced/extension/youtube/patches/DisablePreciseSeekingGesturePatch;"
 
         allowSwipingUpGestureFingerprint.applyMatch(
             context,
