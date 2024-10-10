@@ -2,6 +2,7 @@ package app.revanced.patches.youtube.misc.playercontrols
 
 import app.revanced.patcher.extensions.InstructionExtensions.addInstruction
 import app.revanced.patcher.extensions.InstructionExtensions.getInstruction
+import app.revanced.patcher.patch.PatchException
 import app.revanced.patcher.patch.bytecodePatch
 import app.revanced.patcher.patch.resourcePatch
 import app.revanced.patcher.util.Document
@@ -80,10 +81,11 @@ val playerControlsResourcePatch = resourcePatch {
         )
 
         addTopControl = { resourceDirectoryName ->
+            val resourceFileName = "host/layout/youtube_controls_layout.xml"
             val hostingResourceStream = inputStreamFromBundledResource(
                 resourceDirectoryName,
-                "host/layout/youtube_controls_layout.xml",
-            )!!
+                resourceFileName
+            ) ?: throw PatchException("Could not find $resourceFileName")
 
             val document = context.document["res/layout/youtube_controls_layout.xml"]
 
@@ -105,10 +107,10 @@ val playerControlsResourcePatch = resourcePatch {
         }
 
         addBottomControl = { resourceDirectoryName ->
+            val resourceFileName = "host/layout/youtube_controls_bottom_ui_container.xml"
             val sourceDocument = context.document[
-                this::class.java.classLoader.getResourceAsStream(
-                    "$resourceDirectoryName/host/layout/$targetResourceName",
-                )!!,
+                inputStreamFromBundledResource(resourceDirectoryName, resourceFileName)
+                    ?: throw PatchException("Could not find $resourceFileName")
             ]
 
             val sourceElements = sourceDocument.getElementsByTagName(
@@ -119,7 +121,7 @@ val playerControlsResourcePatch = resourcePatch {
             for (index in 1 until sourceElements.length) {
                 val element = sourceElements.item(index).cloneNode(true)
 
-                // If the element has no attributes there's no point to adding it to the destination.
+                // If the element has no attributes there's no point adding it to the destination.
                 if (!element.hasAttributes()) continue
 
                 element.attributes.getNamedItem("yt:layout_constraintRight_toLeftOf").nodeValue = bottomLastLeftOf
