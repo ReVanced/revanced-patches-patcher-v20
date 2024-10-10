@@ -78,7 +78,7 @@ val spoofVideoStreamsPatch = bytecodePatch(
     val protobufClassParseByteBufferMatch by protobufClassParseByteBufferFingerprint()
 
     execute {
-        addResources("misc", "fix.playback.spoofVideoStreamsPatch")
+        addResources("youtube", "misc.fix.playback.spoofVideoStreamsPatch")
 
         PreferenceScreen.MISC.addPreferences(
             PreferenceScreenPreference(
