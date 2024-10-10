@@ -1,3 +1,11 @@
+## [4.17.1](https://github.com/ReVanced/revanced-patches-patcher-v20/compare/v4.17.0...v4.17.1) (2024-10-10)
+
+
+### Bug Fixes
+
+* Change order to initialize the options first before referencing them ([519ec5d](https://github.com/ReVanced/revanced-patches-patcher-v20/commit/519ec5dad5bc7c0f4cbd122b7b22400ca9068206))
+* Validate the file exists and has the expected contents ([da3374f](https://github.com/ReVanced/revanced-patches-patcher-v20/commit/da3374fbdbed4dbfcbaff7d8cff76c6601a568b3))
+
 # [4.17.0](https://github.com/ReVanced/revanced-patches-patcher-v20/compare/v4.16.0...v4.17.0) (2024-10-10)
 
 
