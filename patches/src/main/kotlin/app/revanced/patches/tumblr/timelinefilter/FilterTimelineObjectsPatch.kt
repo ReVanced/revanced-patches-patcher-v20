@@ -5,7 +5,7 @@ import app.revanced.patcher.extensions.InstructionExtensions.addInstructionsWith
 import app.revanced.patcher.extensions.InstructionExtensions.getInstruction
 import app.revanced.patcher.extensions.InstructionExtensions.removeInstructions
 import app.revanced.patcher.patch.bytecodePatch
-import app.revanced.patches.tumblr.misc.extensions.sharedExtensionPatch
+import app.revanced.patches.tumblr.misc.extension.sharedExtensionPatch
 import com.android.tools.smali.dexlib2.builder.instruction.BuilderInstruction35c
 
 /**

@@ -7,7 +7,7 @@ import app.revanced.patches.shared.misc.settings.preference.ListPreference
 import app.revanced.patches.shared.misc.settings.preference.NonInteractivePreference
 import app.revanced.patches.shared.misc.settings.preference.SwitchPreference
 import app.revanced.patches.shared.misc.settings.preference.TextPreference
-import app.revanced.patches.youtube.misc.extensions.sharedExtensionPatch
+import app.revanced.patches.youtube.misc.extension.sharedExtensionPatch
 import app.revanced.patches.youtube.misc.imageurlhook.addImageUrlErrorCallbackHook
 import app.revanced.patches.youtube.misc.imageurlhook.addImageUrlHook
 import app.revanced.patches.youtube.misc.imageurlhook.addImageUrlSuccessCallbackHook

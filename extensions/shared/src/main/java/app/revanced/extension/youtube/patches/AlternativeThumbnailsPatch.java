@@ -593,13 +593,13 @@ public final class AlternativeThumbnailsPatch {
             }
 
             if (fastQuality) {
-                return true; // Unknown if it exists or not.  Use the URL anyways and update afterwards if loading fails.
+                return true; // Unknown if it exists or not.  Use the URL anyway and update afterward if loading fails.
             }
 
             boolean imageFileFound;
             try {
                 // This hooked code is running on a low priority thread, and it's slightly faster
-                // to run the url connection thru the integrations thread pool which runs at the highest priority.
+                // to run the url connection through the extension thread pool which runs at the highest priority.
                 final long start = System.currentTimeMillis();
                 imageFileFound = Utils.submitOnBackgroundThread(() -> {
                     final int connectionTimeoutMillis = 10000; // 10 seconds.
