@@ -1,6 +1,6 @@
 package app.revanced.patches.googlephotos.misc.extension
 
-import app.revanced.patches.shared.misc.extensions.extensionsHook
+import app.revanced.patches.shared.misc.extension.extensionHook
 import app.revanced.util.getReference
 import app.revanced.util.indexOfFirstInstructionOrThrow
 import com.android.tools.smali.dexlib2.Opcode
@@ -9,7 +9,7 @@ import com.android.tools.smali.dexlib2.iface.reference.MethodReference
 
 private var getApplicationContextIndex = -1
 
-internal val homeActivityInitHook = extensionsHook(
+internal val homeActivityInitHook = extensionHook(
     insertIndexResolver = { method ->
         getApplicationContextIndex = method.indexOfFirstInstructionOrThrow {
             getReference<MethodReference>()?.name == "getApplicationContext"

@@ -21,8 +21,8 @@ public abstract class Setting<T> {
 
     /**
      * Indicates if a {@link Setting} is available to edit and use.
-     * Typically this is dependent upon other BooleanSetting(s) set to 'true',
-     * but this can be used to call into integrations code and check other conditions.
+     * Typically, this is dependent upon other BooleanSetting(s) set to 'true',
+     * but this can be used to call into extension code and check other conditions.
      */
     public interface Availability {
         boolean isAvailable();

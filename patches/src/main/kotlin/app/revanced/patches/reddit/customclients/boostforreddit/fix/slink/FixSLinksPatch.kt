@@ -6,7 +6,7 @@ import app.revanced.patcher.extensions.InstructionExtensions.getInstruction
 import app.revanced.patcher.util.smali.ExternalLabel
 import app.revanced.patches.reddit.customclients.RESOLVE_S_LINK_METHOD
 import app.revanced.patches.reddit.customclients.SET_ACCESS_TOKEN_METHOD
-import app.revanced.patches.reddit.customclients.boostforreddit.misc.extensions.sharedExtensionPatch
+import app.revanced.patches.reddit.customclients.boostforreddit.misc.extension.sharedExtensionPatch
 import app.revanced.patches.reddit.customclients.fixSLinksPatch
 
 const val EXTENSION_CLASS_DESCRIPTOR = "Lapp/revanced/extension/boostforreddit/FixSLinksPatch;"

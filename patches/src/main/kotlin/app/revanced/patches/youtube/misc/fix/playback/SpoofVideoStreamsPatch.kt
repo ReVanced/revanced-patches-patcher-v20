@@ -92,7 +92,7 @@ val spoofVideoStreamsPatch = bytecodePatch(
                     ),
                     SwitchPreference(
                         "revanced_spoof_video_streams_ios_force_avc",
-                        tag = "app.revanced.integrations.youtube.settings.preference.ForceAVCSpoofingPreference",
+                        tag = "app.revanced.extension.youtube.settings.preference.ForceAVCSpoofingPreference",
                     ),
                     NonInteractivePreference("revanced_spoof_video_streams_about_android_vr"),
                     NonInteractivePreference("revanced_spoof_video_streams_about_ios"),

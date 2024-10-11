@@ -3,7 +3,7 @@ package app.revanced.patches.tiktok.feedfilter
 import app.revanced.patcher.extensions.InstructionExtensions.addInstruction
 import app.revanced.patcher.extensions.InstructionExtensions.instructions
 import app.revanced.patcher.patch.bytecodePatch
-import app.revanced.patches.tiktok.misc.extensions.sharedExtensionPatch
+import app.revanced.patches.tiktok.misc.extension.sharedExtensionPatch
 import app.revanced.patches.tiktok.misc.settings.settingsPatch
 import app.revanced.patches.tiktok.misc.settings.settingsStatusLoadFingerprint
 import com.android.tools.smali.dexlib2.Opcode

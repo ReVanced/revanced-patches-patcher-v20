@@ -19,36 +19,35 @@ public class Logger {
     public interface LogMessage {
         @NonNull
         String buildMessageString();
-
-        /**
-         * @return For outer classes, this returns {@link Class#getSimpleName()}.
-         * For static, inner, or anonymous classes, this returns the simple name of the enclosing class.
-         * <br>
-         * For example, each of these classes return 'SomethingView':
-         * <code>
-         * com.company.SomethingView
-         * com.company.SomethingView$StaticClass
-         * com.company.SomethingView$1
-         * </code>
-         */
-        private String findOuterClassSimpleName() {
-            var selfClass = this.getClass();
-
-            String fullClassName = selfClass.getName();
-            final int dollarSignIndex = fullClassName.indexOf('$');
-            if (dollarSignIndex < 0) {
-                return selfClass.getSimpleName(); // Already an outer class.
-            }
-
-            // Class is inner, static, or anonymous.
-            // Parse the simple name full name.
-            // A class with no package returns index of -1, but incrementing gives index zero which is correct.
-            final int simpleClassNameStartIndex = fullClassName.lastIndexOf('.') + 1;
-            return fullClassName.substring(simpleClassNameStartIndex, dollarSignIndex);
-        }
     }
 
     private static final String REVANCED_LOG_PREFIX = "revanced: ";
+
+    /**
+     * @return For outer classes, this returns {@link Class#getSimpleName()}.
+     * For static, inner, or anonymous classes, this returns the simple name of the enclosing class.
+     * <br>
+     * For example, each of these classes return 'SomethingView':
+     * <code>
+     * com.company.SomethingView
+     * com.company.SomethingView$StaticClass
+     * com.company.SomethingView$1
+     * </code>
+     */
+    private static String findOuterClassSimpleName(Object obj) {
+        var selfClass = obj.getClass();
+        String fullClassName = selfClass.getName();
+        final int dollarSignIndex = fullClassName.indexOf('$');
+        if (dollarSignIndex < 0) {
+            return selfClass.getSimpleName(); // Already an outer class.
+        }
+        // Class is inner, static, or anonymous.
+        // Parse the simple name full name.
+        // A class with no package returns index of -1, but incrementing gives index zero which is correct.
+        final int simpleClassNameStartIndex = fullClassName.lastIndexOf('.') + 1;
+        return fullClassName.substring(simpleClassNameStartIndex, dollarSignIndex);
+    }
+
 
     /**
      * Logs debug messages under the outer class name of the code calling this method.
@@ -67,7 +66,7 @@ public class Logger {
     public static void printDebug(@NonNull LogMessage message, @Nullable Exception ex) {
         if (DEBUG.get()) {
             String logMessage = message.buildMessageString();
-            String logTag = REVANCED_LOG_PREFIX + message.findOuterClassSimpleName();
+            String logTag = REVANCED_LOG_PREFIX + findOuterClassSimpleName(message);
 
             if (DEBUG_STACKTRACE.get()) {
                 var builder = new StringBuilder(logMessage);
@@ -97,7 +96,7 @@ public class Logger {
      * Logs information messages using the outer class name of the code calling this method.
      */
     public static void printInfo(@NonNull LogMessage message, @Nullable Exception ex) {
-        String logTag = REVANCED_LOG_PREFIX + message.findOuterClassSimpleName();
+        String logTag = REVANCED_LOG_PREFIX + findOuterClassSimpleName(message);
         String logMessage = message.buildMessageString();
         if (ex == null) {
             Log.i(logTag, logMessage);
@@ -133,7 +132,7 @@ public class Logger {
     public static void printException(@NonNull LogMessage message, @Nullable Throwable ex,
                                       @Nullable String userToastMessage) {
         String messageString = message.buildMessageString();
-        String outerClassSimpleName = message.findOuterClassSimpleName();
+        String outerClassSimpleName = findOuterClassSimpleName(message);
         String logMessage = REVANCED_LOG_PREFIX + outerClassSimpleName;
         if (ex == null) {
             Log.e(logMessage, messageString);

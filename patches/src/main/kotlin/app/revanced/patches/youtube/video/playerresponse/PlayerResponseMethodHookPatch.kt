@@ -4,7 +4,7 @@ import app.revanced.patcher.extensions.InstructionExtensions.addInstruction
 import app.revanced.patcher.extensions.InstructionExtensions.addInstructions
 import app.revanced.patcher.patch.bytecodePatch
 import app.revanced.patcher.util.proxy.mutableTypes.MutableMethod
-import app.revanced.patches.youtube.misc.extensions.sharedExtensionPatch
+import app.revanced.patches.youtube.misc.extension.sharedExtensionPatch
 
 private val hooks = mutableSetOf<Hook>()
 

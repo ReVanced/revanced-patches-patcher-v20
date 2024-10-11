@@ -1,7 +1,7 @@
 package app.revanced.patches.music.misc.gms
 
 import app.revanced.patcher.patch.Option
-import app.revanced.patches.music.misc.extensions.sharedExtensionPatch
+import app.revanced.patches.music.misc.extension.sharedExtensionPatch
 import app.revanced.patches.music.misc.gms.Constants.MUSIC_PACKAGE_NAME
 import app.revanced.patches.music.misc.gms.Constants.REVANCED_MUSIC_PACKAGE_NAME
 import app.revanced.patches.shared.castContextFetchFingerprint

@@ -304,7 +304,7 @@ public final class app/revanced/patches/music/misc/backgroundplayback/Background
 	public static final fun getBackgroundPlaybackPatch ()Lapp/revanced/patcher/patch/BytecodePatch;
 }
 
-public final class app/revanced/patches/music/misc/extensions/SharedExtensionPatchKt {
+public final class app/revanced/patches/music/misc/extension/SharedExtensionPatchKt {
 	public static final fun getSharedExtensionPatch ()Lapp/revanced/patcher/patch/BytecodePatch;
 }
 
@@ -421,7 +421,7 @@ public final class app/revanced/patches/reddit/customclients/boostforreddit/fix/
 	public static final fun getFixSlinksPatch ()Lapp/revanced/patcher/patch/BytecodePatch;
 }
 
-public final class app/revanced/patches/reddit/customclients/boostforreddit/misc/extensions/SharedExtensionPatchKt {
+public final class app/revanced/patches/reddit/customclients/boostforreddit/misc/extension/SharedExtensionPatchKt {
 	public static final fun getSharedExtensionPatch ()Lapp/revanced/patcher/patch/BytecodePatch;
 }
 
@@ -486,7 +486,7 @@ public final class app/revanced/patches/reddit/customclients/sync/syncforreddit/
 	public static final fun getSpoofClientPatch ()Lapp/revanced/patcher/patch/BytecodePatch;
 }
 
-public final class app/revanced/patches/reddit/customclients/sync/syncforreddit/extensions/SharedExtensionPatchKt {
+public final class app/revanced/patches/reddit/customclients/sync/syncforreddit/extension/SharedExtensionPatchKt {
 	public static final fun getSharedExtensionPatch ()Lapp/revanced/patcher/patch/BytecodePatch;
 }
 
@@ -507,7 +507,7 @@ public final class app/revanced/patches/reddit/layout/premiumicon/UnlockPremiumI
 	public static final fun getUnlockPremiumIconPatch ()Lapp/revanced/patcher/patch/BytecodePatch;
 }
 
-public final class app/revanced/patches/reddit/misc/extensions/ExtensionPatchKt {
+public final class app/revanced/patches/reddit/misc/extension/ExtensionPatchKt {
 	public static final fun getSharedExtensionPatch ()Lapp/revanced/patcher/patch/BytecodePatch;
 }
 
@@ -523,15 +523,15 @@ public final class app/revanced/patches/shared/misc/checks/BaseCheckEnvironmentP
 	public static final fun checkEnvironmentPatch (Lapp/revanced/patcher/Fingerprint;Lapp/revanced/patcher/patch/Patch;[Ljava/lang/String;)Lapp/revanced/patcher/patch/BytecodePatch;
 }
 
-public final class app/revanced/patches/shared/misc/extensions/ExtensionsHook {
+public final class app/revanced/patches/shared/misc/extension/ExtensionHook {
 	public final fun getFingerprint ()Lapp/revanced/patcher/Fingerprint;
 	public final fun invoke (Ljava/lang/String;)V
 }
 
-public final class app/revanced/patches/shared/misc/extensions/SharedExtensionPatchKt {
-	public static final fun extensionsHook (Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Lapp/revanced/patches/shared/misc/extensions/ExtensionsHook;
-	public static synthetic fun extensionsHook$default (Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Lapp/revanced/patches/shared/misc/extensions/ExtensionsHook;
-	public static final fun sharedExtensionPatch ([Lapp/revanced/patches/shared/misc/extensions/ExtensionsHook;)Lapp/revanced/patcher/patch/BytecodePatch;
+public final class app/revanced/patches/shared/misc/extension/SharedExtensionPatchKt {
+	public static final fun extensionHook (Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Lapp/revanced/patches/shared/misc/extension/ExtensionHook;
+	public static synthetic fun extensionHook$default (Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;ILjava/lang/Object;)Lapp/revanced/patches/shared/misc/extension/ExtensionHook;
+	public static final fun sharedExtensionPatch ([Lapp/revanced/patches/shared/misc/extension/ExtensionHook;)Lapp/revanced/patcher/patch/BytecodePatch;
 }
 
 public final class app/revanced/patches/shared/misc/fix/verticalscroll/VerticalScrollPatchKt {
@@ -820,7 +820,7 @@ public final class app/revanced/patches/tiktok/interaction/speed/PlaybackSpeedPa
 	public static final fun getPlaybackSpeedPatch ()Lapp/revanced/patcher/patch/BytecodePatch;
 }
 
-public final class app/revanced/patches/tiktok/misc/extensions/ExtensionPatchKt {
+public final class app/revanced/patches/tiktok/misc/extension/ExtensionPatchKt {
 	public static final fun getSharedExtensionPatch ()Lapp/revanced/patcher/patch/BytecodePatch;
 }
 
@@ -848,7 +848,7 @@ public final class app/revanced/patches/tudortmund/lockscreen/ShowOnLockscreenPa
 	public static final fun getShowOnLockscreenPatch ()Lapp/revanced/patcher/patch/BytecodePatch;
 }
 
-public final class app/revanced/patches/tudortmund/misc/extensions/ExtensionPatchKt {
+public final class app/revanced/patches/tudortmund/misc/extension/ExtensionPatchKt {
 	public static final fun getSharedExtensionPatch ()Lapp/revanced/patcher/patch/BytecodePatch;
 }
 
@@ -884,7 +884,7 @@ public final class app/revanced/patches/tumblr/live/DisableTumblrLivePatchKt {
 	public static final fun getDisableTumblrLivePatch ()Lapp/revanced/patcher/patch/BytecodePatch;
 }
 
-public final class app/revanced/patches/tumblr/misc/extensions/ExtensionPatchKt {
+public final class app/revanced/patches/tumblr/misc/extension/ExtensionPatchKt {
 	public static final fun getSharedExtensionPatch ()Lapp/revanced/patcher/patch/BytecodePatch;
 }
 
@@ -934,7 +934,7 @@ public final class app/revanced/patches/twitch/debug/DebugModePatchKt {
 	public static final fun getDebugModePatch ()Lapp/revanced/patcher/patch/BytecodePatch;
 }
 
-public final class app/revanced/patches/twitch/misc/extensions/SharedExtensionPatchKt {
+public final class app/revanced/patches/twitch/misc/extension/SharedExtensionPatchKt {
 	public static final fun getSharedExtensionPatch ()Lapp/revanced/patcher/patch/BytecodePatch;
 }
 
@@ -955,7 +955,7 @@ public final class app/revanced/patches/twitter/misc/dynamiccolor/DynamicColorPa
 	public static final fun getDynamicColorPatch ()Lapp/revanced/patcher/patch/ResourcePatch;
 }
 
-public final class app/revanced/patches/twitter/misc/extensions/ExtensionPatchKt {
+public final class app/revanced/patches/twitter/misc/extension/ExtensionPatchKt {
 	public static final fun getSharedExtensionPatch ()Lapp/revanced/patcher/patch/BytecodePatch;
 }
 
@@ -1268,7 +1268,7 @@ public final class app/revanced/patches/youtube/misc/dns/CheckWatchHistoryDomain
 	public static final fun getCheckWatchHistoryDomainNameResolutionPatch ()Lapp/revanced/patcher/patch/BytecodePatch;
 }
 
-public final class app/revanced/patches/youtube/misc/extensions/SharedExtensionPatchKt {
+public final class app/revanced/patches/youtube/misc/extension/SharedExtensionPatchKt {
 	public static final fun getSharedExtensionPatch ()Lapp/revanced/patcher/patch/BytecodePatch;
 }
 

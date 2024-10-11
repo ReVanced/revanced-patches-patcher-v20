@@ -20,7 +20,7 @@ import java.util.List;
  */
 public class AppCompatActivityHook {
     private static final int REVANCED_SETTINGS_MENU_ITEM_ID = 0x7;
-    private static final String EXTRA_REVANCED_SETTINGS = "app.revanced.twitch.settings";
+    private static final String EXTRA_REVANCED_SETTINGS = "app.revanced.extension.twitch.settings";
 
     /**
      * Launches SettingsActivity and show ReVanced settings

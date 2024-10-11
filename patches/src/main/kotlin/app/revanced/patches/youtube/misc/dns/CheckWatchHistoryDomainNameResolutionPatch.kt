@@ -6,7 +6,7 @@ import app.revanced.patches.all.misc.resources.addResources
 import app.revanced.patches.youtube.shared.mainActivityOnCreateFingerprint
 
 private const val EXTENSION_CLASS_DESCRIPTOR =
-    "Lapp/revanced/extensions/youtube/patches/CheckWatchHistoryDomainNameResolutionPatch;"
+    "Lapp/revanced/extension/youtube/patches/CheckWatchHistoryDomainNameResolutionPatch;"
 
 @Suppress("unused")
 val checkWatchHistoryDomainNameResolutionPatch = bytecodePatch(
