@@ -18,8 +18,6 @@ import app.revanced.patches.twitch.misc.extension.sharedExtensionPatch
 import com.android.tools.smali.dexlib2.AccessFlags
 import com.android.tools.smali.dexlib2.immutable.ImmutableField
 
-val preferences = mutableSetOf<BasePreference>()
-
 private const val REVANCED_SETTINGS_MENU_ITEM_NAME = "RevancedSettings"
 private const val REVANCED_SETTINGS_MENU_ITEM_ID = 0x7
 private const val REVANCED_SETTINGS_MENU_ITEM_TITLE_RES = "revanced_settings"
@@ -32,6 +30,12 @@ private const val MENU_DISMISS_EVENT_CLASS_DESCRIPTOR =
 private const val EXTENSION_PACKAGE = "app/revanced/extension/twitch"
 private const val ACTIVITY_HOOKS_CLASS_DESCRIPTOR = "L$EXTENSION_PACKAGE/settings/AppCompatActivityHook;"
 private const val UTILS_CLASS_DESCRIPTOR = "L$EXTENSION_PACKAGE/Utils;"
+
+private val preferences = mutableSetOf<BasePreference>()
+
+fun addSettingPreference(screen: BasePreference) {
+    preferences += screen
+}
 
 val settingsPatch = bytecodePatch(
     name = "Settings",
@@ -188,7 +192,7 @@ internal object PreferenceScreen : BasePreferenceScreen() {
         val CLIENT_SIDE = CustomCategory("revanced_client_ads_category")
         val SURESTREAM = CustomCategory("revanced_surestream_ads_category")
 
-        internal inner class CustomCategory(key: String) : Screen.Category(key) {
+        internal inner class CustomCategory(key: String) : Category(key) {
             /* For Twitch, we need to load our CustomPreferenceCategory class instead of the default one. */
             override fun transform(): PreferenceCategory = PreferenceCategory(
                 key,

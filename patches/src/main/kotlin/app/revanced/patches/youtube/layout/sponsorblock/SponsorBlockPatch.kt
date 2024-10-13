@@ -16,8 +16,8 @@ import app.revanced.patches.youtube.misc.extension.sharedExtensionPatch
 import app.revanced.patches.youtube.misc.playercontrols.*
 import app.revanced.patches.youtube.misc.playercontrols.addTopControl
 import app.revanced.patches.youtube.misc.playertype.playerTypeHookPatch
+import app.revanced.patches.youtube.misc.settings.addSettingPreference
 import app.revanced.patches.youtube.misc.settings.newIntent
-import app.revanced.patches.youtube.misc.settings.preferences
 import app.revanced.patches.youtube.misc.settings.settingsPatch
 import app.revanced.patches.youtube.shared.*
 import app.revanced.patches.youtube.video.information.onCreateHook
@@ -44,11 +44,13 @@ private val sponsorBlockResourcePatch = resourcePatch {
     execute { context ->
         addResources("youtube", "layout.sponsorblock.sponsorBlockResourcePatch")
 
-        preferences += IntentPreference(
-            key = "revanced_settings_screen_10",
-            titleKey = "revanced_sb_settings_title",
-            summaryKey = null,
-            intent = newIntent("revanced_sb_settings_intent"),
+        addSettingPreference(
+            IntentPreference(
+                key = "revanced_settings_screen_10",
+                titleKey = "revanced_sb_settings_title",
+                summaryKey = null,
+                intent = newIntent("revanced_sb_settings_intent"),
+            )
         )
 
         arrayOf(

@@ -939,7 +939,7 @@ public final class app/revanced/patches/twitch/misc/extension/SharedExtensionPat
 }
 
 public final class app/revanced/patches/twitch/misc/settings/SettingsPatchKt {
-	public static final fun getPreferences ()Ljava/util/Set;
+	public static final fun addSettingPreference (Lapp/revanced/patches/shared/misc/settings/preference/BasePreference;)V
 	public static final fun getSettingsPatch ()Lapp/revanced/patcher/patch/BytecodePatch;
 }
 
@@ -1349,7 +1349,7 @@ public final class app/revanced/patches/youtube/misc/settings/PreferenceScreen :
 }
 
 public final class app/revanced/patches/youtube/misc/settings/SettingsPatchKt {
-	public static final fun getPreferences ()Ljava/util/Set;
+	public static final fun addSettingPreference (Lapp/revanced/patches/shared/misc/settings/preference/BasePreference;)V
 	public static final fun getSettingsPatch ()Lapp/revanced/patcher/patch/BytecodePatch;
 	public static final fun newIntent (Ljava/lang/String;)Lapp/revanced/patches/shared/misc/settings/preference/IntentPreference$Intent;
 }

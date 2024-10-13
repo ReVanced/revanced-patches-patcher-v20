@@ -16,7 +16,6 @@ import app.revanced.patches.shared.misc.mapping.resourceMappings
 import app.revanced.patches.shared.misc.settings.preference.*
 import app.revanced.patches.shared.misc.settings.preference.PreferenceScreenPreference.Sorting
 import app.revanced.patches.shared.misc.settings.settingsPatch
-import app.revanced.patches.twitch.misc.settings.preferences
 import app.revanced.patches.youtube.misc.check.checkEnvironmentPatch
 import app.revanced.patches.youtube.misc.extension.sharedExtensionPatch
 import app.revanced.util.ResourceGroup
@@ -31,7 +30,11 @@ import org.w3c.dom.Element
 internal var appearanceStringId = -1L
     private set
 
-val preferences = mutableSetOf<BasePreference>()
+private val preferences = mutableSetOf<BasePreference>()
+
+fun addSettingPreference(screen: BasePreference) {
+    preferences += screen
+}
 
 private val settingsResourcePatch = resourcePatch {
     dependsOn(

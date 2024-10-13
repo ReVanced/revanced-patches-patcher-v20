@@ -17,8 +17,8 @@ import app.revanced.patches.youtube.misc.extension.sharedExtensionPatch
 import app.revanced.patches.youtube.misc.litho.filter.addLithoFilter
 import app.revanced.patches.youtube.misc.litho.filter.lithoFilterPatch
 import app.revanced.patches.youtube.misc.playertype.playerTypeHookPatch
+import app.revanced.patches.youtube.misc.settings.addSettingPreference
 import app.revanced.patches.youtube.misc.settings.newIntent
-import app.revanced.patches.youtube.misc.settings.preferences
 import app.revanced.patches.youtube.misc.settings.settingsPatch
 import app.revanced.patches.youtube.shared.rollingNumberTextViewAnimationUpdateFingerprint
 import app.revanced.patches.youtube.video.videoid.hookPlayerResponseVideoId
@@ -49,11 +49,13 @@ private val returnYouTubeDislikeResourcePatch = resourcePatch {
     execute {
         addResources("youtube", "layout.returnyoutubedislike.returnYouTubeDislikeResourcePatch")
 
-        preferences += IntentPreference(
-            key = "revanced_settings_screen_09",
-            titleKey = "revanced_ryd_settings_title",
-            summaryKey = null,
-            intent = newIntent("revanced_ryd_settings_intent"),
+        addSettingPreference(
+            IntentPreference(
+                key = "revanced_settings_screen_09",
+                titleKey = "revanced_ryd_settings_title",
+                summaryKey = null,
+                intent = newIntent("revanced_ryd_settings_intent"),
+            )
         )
 
         oldUIDislikeId = resourceMappings[
