@@ -261,7 +261,7 @@ private object Constants {
     /**
      * A list of all permissions.
      */
-    val PERMISSIONS = listOf(
+    val PERMISSIONS = setOf(
         // C2DM / GCM
         "com.google.android.c2dm.permission.RECEIVE",
         "com.google.android.c2dm.permission.SEND",
@@ -278,7 +278,7 @@ private object Constants {
     /**
      * All intent actions.
      */
-    val ACTIONS = listOf(
+    val ACTIONS = setOf(
         // location
         "com.google.android.gms.location.places.ui.PICK_PLACE",
         "com.google.android.gms.location.places.GeoDataApi",
@@ -345,8 +345,6 @@ private object Constants {
         "com.google.android.gms.clearcut.service.START",
         "com.google.android.gms.icing.LIGHTWEIGHT_INDEX_SERVICE",
         "com.google.android.gms.accountsettings.action.VIEW_SETTINGS",
-
-        // potoken
         "com.google.android.gms.potokens.service.START",
 
         // droidguard/ safetynet
@@ -357,7 +355,7 @@ private object Constants {
     /**
      * All content provider authorities.
      */
-    val AUTHORITIES = listOf(
+    val AUTHORITIES = setOf(
         // gsf
         "com.google.android.gsf.gservices",
         "com.google.settings",
