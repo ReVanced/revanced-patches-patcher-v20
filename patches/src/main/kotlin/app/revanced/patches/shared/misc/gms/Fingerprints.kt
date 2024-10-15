@@ -11,10 +11,6 @@ internal val gmsCoreSupportFingerprint = fingerprint {
     }
 }
 
-internal val castDynamiteModuleFingerprint = fingerprint {
-    strings("com.google.android.gms.cast.framework.internal.CastDynamiteModuleImpl")
-}
-
 internal val googlePlayUtilityFingerprint = fingerprint {
     accessFlags(AccessFlags.PUBLIC, AccessFlags.STATIC)
     returns("I")

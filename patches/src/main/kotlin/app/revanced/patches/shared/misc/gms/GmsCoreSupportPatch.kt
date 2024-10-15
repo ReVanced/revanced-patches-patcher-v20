@@ -84,7 +84,6 @@ fun gmsCoreSupportPatch(
     primeMethodFingerprint?.invoke()
     googlePlayUtilityFingerprint()
     serviceCheckFingerprint()
-    castDynamiteModuleFingerprint()
     earlyReturnFingerprints.forEach { it() }
 
     execute { context ->
@@ -208,10 +207,7 @@ fun gmsCoreSupportPatch(
         // Return these methods early to prevent the app from crashing.
         earlyReturnFingerprints.returnEarly()
         serviceCheckFingerprint.returnEarly()
-        // Not all apps have CastDynamiteModule, so we need to check if it's present.
-        if (castDynamiteModuleFingerprint.match != null) {
-            castDynamiteModuleFingerprint.returnEarly()
-        }
+
         // Google Play Utility is not present in all apps, so we need to check if it's present.
         if (googlePlayUtilityFingerprint.match != null) {
             googlePlayUtilityFingerprint.returnEarly()
