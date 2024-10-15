@@ -23,7 +23,7 @@ fun sharedExtensionPatch(
     hooks.forEach { it.fingerprint() }
 
     execute { context ->
-        if (context.classByType(EXTENSION_CLASS_DESCRIPTOR) == null) {
+        if (context.classBy { EXTENSION_CLASS_DESCRIPTOR in it.type } == null) {
             throw PatchException(
                 "Shared extension has not been merged yet. This patch can not succeed without merging it.",
             )

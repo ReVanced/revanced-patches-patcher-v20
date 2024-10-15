@@ -29,7 +29,7 @@ val hideCastButtonPatch = bytecodePatch(
             SwitchPreference("revanced_hide_cast_button"),
         )
 
-        val buttonClass = context.classByType("MediaRouteButton")
+        val buttonClass = context.classBy { "MediaRouteButton" in it.type }
             ?: throw PatchException("MediaRouteButton class not found.")
 
         buttonClass.mutableClass.methods.find { it.name == "setVisibility" }?.addInstructions(
