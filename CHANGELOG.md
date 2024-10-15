@@ -1,3 +1,10 @@
+## [4.17.3](https://github.com/ReVanced/revanced-patches-patcher-v20/compare/v4.17.2...v4.17.3) (2024-10-15)
+
+
+### Bug Fixes
+
+* remove unclear patch ([dad824a](https://github.com/ReVanced/revanced-patches-patcher-v20/commit/dad824a5bc680569cfff7e5862ac9f495b83929d))
+
 ## [4.17.2](https://github.com/ReVanced/revanced-patches-patcher-v20/compare/v4.17.1...v4.17.2) (2024-10-11)
 
 
