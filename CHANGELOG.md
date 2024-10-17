@@ -1,3 +1,10 @@
+## [4.17.4](https://github.com/ReVanced/revanced-patches-patcher-v20/compare/v4.17.3...v4.17.4) (2024-10-17)
+
+
+### Bug Fixes
+
+* remove another unclear patch ([9900e5c](https://github.com/ReVanced/revanced-patches-patcher-v20/commit/9900e5ccf5409512137b1c1d835f7278485a4d1b))
+
 ## [4.17.3](https://github.com/ReVanced/revanced-patches-patcher-v20/compare/v4.17.2...v4.17.3) (2024-10-15)
 
 
