@@ -23,7 +23,8 @@ internal val getEnterFromFingerprint = fingerprint {
 }
 
 internal val onRenderFirstFrameFingerprint = fingerprint {
-    custom { method, classDef ->
-        classDef.endsWith("/BaseListFragmentPanel;") && method.name == "onRenderFirstFrame"
+    strings("method_enable_viewpager_preload_duration")
+    custom { _, classDef ->
+        classDef.endsWith("/BaseListFragmentPanel;")
     }
 }
